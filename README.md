@@ -29,5 +29,8 @@ dme-app/
 │
 └── README.md              # Ez a leírás
 
+---
+
 ## Jogi nyilatkozat (Disclaimer)
+
 A kalkulátor **nem hivatalos program**. A pontszámok ellenőrzése és a hiányzó adatok pontos kitöltése a jelölt saját felelőssége. A program esetleges számítási hibáiért az alkotók semmilyen felelősséget nem vállalnak.
