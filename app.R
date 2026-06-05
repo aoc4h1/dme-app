@@ -14,6 +14,11 @@ library(bsicons)
 library(logger)
 library(rlang)
 
+# --- Verziószám ---
+
+aktualis_verzioszam <- "v1.0.1."
+aktualis_datum <- "2026.06.05."
+
 
 # --- Segédfüggvények ---
 
@@ -115,7 +120,8 @@ ui <- page_fillable(
         
         tags$br(),
         
-        tags$span(class = "fw-bold", "Jelenlegi verzió: v1.0.1"), " (Utolsó frissítés: 2026.06.05.)",
+        tags$span(class = "fw-bold", paste0("Jelenlegi verzió: ", aktualis_verzioszam)), 
+        paste0(" (Utolsó frissítés: ", aktualis_datum, ")"),
         
         tags$br(),
         
@@ -324,7 +330,14 @@ server <- function(input, output, session) {
         writeData(wb, "INFO", x = affiliaciok, startCol = 2, startRow = 8)
         
         apply_cond_format(wb, "INFO", cols = 2,  rows = 4, rule = "LEN(B4)=0")
-
+        
+        # Verziószám hozzáadása
+        writeData(wb, "INFO", x = paste0("Jelenlegi verzió: ", aktualis_verzioszam, " (", aktualis_datum, ")"), startCol = 1, startRow = 8+length(affiliaciok))
+        addStyle(wb,
+                 sheet = "INFO",
+                 style = createStyle(textDecoration = c("bold", "italic"), fontColour = "#808080"),
+                 cols = 1, rows = 8+length(affiliaciok),
+                 gridExpand = FALSE)
         
         # ---------------------------------------------------------
         # 3. Új változók létrehozása és meglévők átalakítása
