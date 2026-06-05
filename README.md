@@ -6,7 +6,7 @@ A kalkulációk a **Magyar Tudományos Akadémia (MTA) IX. Osztályának Szociol
 
 ---
 
-## Főbb funkciók
+## 🚀 Főbb funkciók
 
 - **Automatikus MTMT profil- és adatlekérés:** Elég megadni a jelölt 8 jegyű MTMT Szerzői ID-ját, az alkalmazás letölti az összes publikációt és a hozzájuk kapcsolódó hivatkozásokat.
 - **Folyóirat-kategorizálás:** Összeveti a megjelent cikkeket a Bizottság hivatalos folyóiratlistájával (`SzocTB_20230601.xlsx`), elkülönítve a hazai és nemzetközi listás lapokat.
@@ -16,8 +16,9 @@ A kalkulációk a **Magyar Tudományos Akadémia (MTA) IX. Osztályának Szociol
 
 ---
 
-## A projekt felépítése
+## 📁 A projekt felépítése
 
+```text
 dme-app/
 │
 ├── app.R                  # A teljes Shiny UI és Server logika
@@ -28,9 +29,3 @@ dme-app/
 ├── dme_utmutato.docx      # Letölthető felhasználói útmutató
 │
 └── README.md              # Ez a leírás
-
----
-
-## Jogi nyilatkozat (Disclaimer)
-
-A kalkulátor **nem hivatalos program**. A pontszámok ellenőrzése és a hiányzó adatok pontos kitöltése a jelölt saját felelőssége. A program esetleges számítási hibáiért az alkotók semmilyen felelősséget nem vállalnak.
