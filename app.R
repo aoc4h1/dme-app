@@ -115,7 +115,7 @@ ui <- page_fillable(
         
         tags$br(),
         
-        "A jelenleg elérhető verzió egy béta verzió. Utolsó frissítés: 2026.06.04.",
+        tags$span(class = "fw-bold", "Jelenlegi verzió: v1.0.1"), " (Utolsó frissítés: 2026.06.05.)",
         
         tags$br(),
         
@@ -183,12 +183,30 @@ ui <- page_fillable(
             class = "btn btn-outline-info w-100",
             icon = icon("file-word")
           )
+        ),
+        
+        # ÚJ VERZIÓTÖRTÉNET SZEKCIÓ
+        accordion_panel(
+          "Verziótörténet",
+          icon = if(has_icons) bs_icon("clock-history") else NULL,
+          div(
+            class = "text-start",
+            tags$h6(class = "fw-bold", "v1.0.1 (2026.06.05.)"),
+            tags$ul(
+              class = "small",
+              tags$li(tags$strong("Hivatkozások:"), " A 'Norvég lista' oszlop adatkonverziós hibájának javítása a 4_hivatkozasok lapfülön."),
+              tags$li(tags$strong("Könyvek besorolása:"), " Pontosított logika az 1_konyv táblázatban. Ha egy könyvnek 2-nél több szerzője van, az automatikusan a '3.1 További pontozott közlemények' kategóriába kerül. Ha 2 vagy kevesebb, az 1_konyv lapfülön is megjelenik.")
+            )
+            # Ide jöhetnek majd a jövőbeli verziók, pl:
+            # hr(),
+            # tags$h6(class = "fw-bold", "v1.00 (2026.06.04.)"),
+            # tags$ul(class = "small", tags$li("Béta verzió indulása."))
+          )
         )
       )
     )
   )
 )
-
 
 # --- Szerver logika (Server) ---
 server <- function(input, output, session) {
